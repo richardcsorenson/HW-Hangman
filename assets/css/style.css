@@ -1,0 +1,13 @@
+/* body{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTED8HmNbgQjOvPWHvJMRFyuWqL9RLbkHVXCxxNekPMsYlvHnyNA);
+} */
+.gameChoice{
+    font-size: 2rem;
+    background-color: gray;
+    padding: 1rem;
+}
+
+.options{
+    position: relative;
+    top: 21rem;
+}
