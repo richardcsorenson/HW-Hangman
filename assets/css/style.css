@@ -1,6 +1,6 @@
-/* body{
+.homepage{
     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTED8HmNbgQjOvPWHvJMRFyuWqL9RLbkHVXCxxNekPMsYlvHnyNA);
-} */
+}
 .gameChoice{
     font-size: 2rem;
     background-color: gray;
@@ -10,4 +10,39 @@
 .options{
     position: relative;
     top: 21rem;
+}
+
+.guess{
+    position: relative;
+    top: 39rem;
+    left: 54rem;
+}
+.usedLetters{
+    position: relative;
+    top: 33rem;
+    left: 55rem;
+
+}
+.winBox{
+    position: relative;
+    top: 15rem;
+    left: 20rem;
+
+}
+.lossBox{
+    position: relative;
+    top: 18rem;
+    left: 20rem;
+
+}
+.currentWord{
+    position: relative;
+    top: 32rem;
+    left: 55rem;
+
+}
+.hangingman{
+    position: relative;
+    top: 10rem;
+    left: 50rem;
 }
