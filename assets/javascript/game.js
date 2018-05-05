@@ -2,7 +2,7 @@
 alert("Press any key to begin, this will be counted as your first guess");
 var alphapet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var alphapetChecker = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var computerChocies = ["rock", "paper", "sissors"];
+var computerChocies = ["rock", "paper", "scissors", "risk", "sorry", "monopoly", "life", "uno", "pit", "solitaire", "poker", "dominion", "codenames", "pokemon", "farkle", "battleship", "clue", "frag", "chess", "checkers", "scrabble", "pandemic", "mancala", "operation", "blockus", "backgammon", "parcheesi"];
 var blankAnswer = [];
 var computerChociesArray = [];
 var hangmanPicture = "";
@@ -25,6 +25,24 @@ document.getElementById("currentWord").innerHTML = blankAnswer.join(" ");
 
 // cheat for developers :P
 console.log(computerGuess);
+
+function resetGuess(){
+    computerGuess = computerChocies[Math.floor(Math.random() * computerChocies.length)];
+    computerChociesArray = [" "," "," "," "," "," "," "," "," "," "," "," "," ",];
+    computerChociesArray.length = 0;
+    computerChociesArray = computerGuess.split("");
+    blankAnswer.length = 0;
+    for (var i = 0; i < computerChociesArray.length; i++){
+        blankAnswer[i] = "_ ";
+    }
+    alphapetChecker = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    guessesRemaining = 6;
+    currentGameGuesses = "";
+    numWins++;
+    winCounter = computerGuess.length;
+    userGuess = "";
+
+}
 
 // function to change Hangman picture based on guesses remaining, will reset to base image on win
 function changeImage(a){
@@ -73,16 +91,9 @@ document.onkeyup = function(event) {
                 alphapetChecker[temp] = "null";
                 if (winCounter === 0){
                     changeImage(1500);
-                    alert("You got it");
+                    alert("You Won!");
                     alert("Get ready to play again");
-                    alphapetChecker = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-                    computerGuess = computerChocies[Math.floor(Math.random() * computerChocies.length)];
-                    guessesRemaining = 6;
-                    currentGameGuesses = "";
-                    numWins++;
-                    for (var j = 0; j < computerChociesArray.length; j++){
-                        blankAnswer[j] = "_ ";
-                    }
+                    resetGuess();
                     // cheat for developers :P
                     console.log(computerGuess);
                 }          
@@ -95,32 +106,20 @@ document.onkeyup = function(event) {
             changeImage(guessesRemaining);
             currentGameGuesses = currentGameGuesses + " " + userGuess;
             if (guessesRemaining === 0){
-                console.log("Game Over");
-                console.log("Get ready to play again");
-                alphapetChecker = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-                computerGuess = computerChocies[Math.floor(Math.random() * computerChocies.length)];
-                guessesRemaining = 6;
-                currentGameGuesses = "";
-                numLosess++;
-                for (var j = 0; j < computerChociesArray.length; j++){
-                    blankAnswer[j] = "_ ";
-                }
+                alert("Game Over");
+                alert("Get ready to play again");
+                resetGuess();
+                changeImage(guessesRemaining);
                 // cheat for developers :P
                 console.log(computerGuess);
             }
         }
         turnLoss = true;
     }
-    var html = 
-    "<p> Number of Guesses left: " + guessesRemaining + "</p>" +
-    "<p> Current Guesses: " + currentGameGuesses + "</p>" +
-    "<p> Wins: " + numWins + "</p>" +
-    "<p> Losess: " + numLosess + "</p>" +
-    "<p> Current Word: " + blankAnswer.join(" ") + " </p>";
     document.getElementById("guessesRemain").innerHTML = guessesRemaining;
     document.getElementById("currentGameGuess").innerHTML = currentGameGuesses;
     document.getElementById("numberWins").innerHTML = numWins;
     document.getElementById("numberLosess").innerHTML = numLosess;
     document.getElementById("currentWord").innerHTML = blankAnswer.join(" ");
-    document.getElementById("game").innerHTML = html;
+    //document.getElementById("game").innerHTML = html;
 }

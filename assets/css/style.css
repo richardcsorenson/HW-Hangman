@@ -9,40 +9,65 @@
 
 .options{
     position: relative;
-    top: 21rem;
+    top: 24rem;
 }
 
 .guess{
     position: relative;
-    top: 39rem;
-    left: 54rem;
+    top: 40rem;
+    left: 46rem;
+    background-color: deepskyblue;
+    padding: .25rem;
+    width: 24rem;
+    text-align: center;
 }
 .usedLetters{
     position: relative;
-    top: 33rem;
-    left: 55rem;
-
+    top: 30rem;
+    left: 46rem;
+    background-color: black;
+    width: 24rem;
+    font-size: 2rem;
+    color: darkred;
+    padding: .25rem;
 }
 .winBox{
     position: relative;
-    top: 15rem;
+    top: 13rem;
     left: 20rem;
-
+    background-color: deepskyblue;
+    width: 150px;
+    font-size: 2rem;
+    padding: .25rem;
 }
 .lossBox{
     position: relative;
-    top: 18rem;
+    top: 16rem;
     left: 20rem;
-
+    background-color: deepskyblue;
+    width: 150px;
+    font-size: 2rem;
+    padding: .25rem;
 }
 .currentWord{
     position: relative;
-    top: 32rem;
-    left: 55rem;
-
+    top: 27rem;
+    left: 44rem;
+    background-color: deepskyblue;
+    width: 28rem;
+    font-size: 2rem;
+    padding: .25rem;
 }
 .hangingman{
     position: relative;
-    top: 10rem;
+    top: 1rem;
     left: 50rem;
+}
+.hangmanBody{
+    background-color: dimgray;
+}
+.Catagory{
+    text-align: center;
+    font-size: 2rem;
+    margin: 1rem;
 }

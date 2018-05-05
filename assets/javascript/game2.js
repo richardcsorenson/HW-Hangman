@@ -56,5 +56,5 @@ document.onkeyup = function(event) {
     "<p> Wins: " + numWins + "</p>" +
     "<p> Losess: " + numLosess + "</p>" +
     "<p></p>";
-    document.getElementById("#game").innerHTML = html;
+    document.getElementById("game").innerHTML = html;
 }
